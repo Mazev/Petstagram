@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Pets(models.Model):
+class Pet(models.Model):
     TYPE_CHOICE_DOG = 'dog'
     TYPE_CHOICE_CAT = 'cat'
     TYPE_CHOICE_PARROT = 'parrot'
@@ -26,5 +26,5 @@ class Pets(models.Model):
     image_url = models.URLField()
 
 
-# class Like(models.Model):
-#     pass
+class Like(models.Model):
+    pet = models.ForeignKey(Pet, on_delete=models.CASCADE)
