@@ -1,3 +1,17 @@
 from django.shortcuts import render
 
-# Create your views here.
+from petstagram.pets.models import Pet
+
+
+def list_pets(request):
+    all_pets = Pet.objects.all()
+
+    context = {
+        'pets': all_pets
+    }
+
+    return render(request, 'pets/pet_list.html',context)
+
+
+def pet_details(request, pk):
+    pass
