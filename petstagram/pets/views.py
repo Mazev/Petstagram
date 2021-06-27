@@ -14,4 +14,8 @@ def list_pets(request):
 
 
 def pet_details(request, pk):
-    pass
+    pet = Pet.objects.get(pk=pk)
+
+    context = {
+        'pet': pet,
+    }
